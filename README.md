@@ -8,6 +8,6 @@ pip install cookiecutter
 Use a Cookiecutter Template: To clone a project from a Cookiecutter template, you use the cookiecutter command followed by the Git URL of the template repository. For example, to clone a Cookiecutter template from GitHub:
 
 ````
-pip run cookiecutter https://github.com/venu-gopal-reddy-11/basics-templates
+cookiecutter https://github.com/venu-gopal-reddy-11/basics-templates
 
 ````
