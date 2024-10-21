@@ -1,0 +1,33 @@
+site_name: "{{cookiecutter.project_name}} documanation"
+repo_url: https://github.com/{{cookiecutter.project_name}}
+site_description: "{{cookiecutter.project_short_description}}"
+site_author: "{{cookiecutter.author}}"  # You can add the author name for meta tags
+repo_name: "{{cookiecutter.project_name}}"
+
+
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'pink'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant  # Enables instant page navigation
+    - navigation.tabs     # Adds tabs to navigation
+    - toc.integrate       # Integrates table of contents into sidebar
+    - search.highlight    # Highlights search results
+
+nav:
+  - Home: 'README.md'
+  - Docs: 'documanation.md'
+plugins:
+  - search  # Adds search functionality
+  - mkdocs-versioning:  # Adds support for versioned docs
+      version: '1.0.0'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
