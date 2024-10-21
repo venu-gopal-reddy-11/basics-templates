@@ -1,5 +1,6 @@
 # docs
 mkdocs
-mkdocs-material
+mkdocsterial
 mkdocs-versioning
-#
+# lib
+
