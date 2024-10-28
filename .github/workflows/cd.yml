@@ -1,0 +1,22 @@
+name: Build and push pllm package to artifactory
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  artifcatory_release:
+    name: Build and artifactory release
+    runs-on: [ self-hosted, ubuntu-latest ]
+    container: dockerhub.artifactory.venu.com/python:3.9
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: # need to update this wrt project
+        with:
+          package-manager: poetry
+          token: ${{ secrets.GITHUB_TOKEN}}
+      - run: |
+          poetry build
+          poetry publish --repository python_jfrog
